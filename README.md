@@ -37,3 +37,22 @@ Properties
     (a o a) o b = a o b
     (a o b) o a = a o b 
     
+
+different paranthese settings
+    abcde:
+    a bcde  (a(b(c(de)))) (a(b((cd)e))) (a((bc)(de))) (a((b(cd))e)) (a(((bc)d)e))
+    ab cde  ((ab)(c(de))) ((ab)((cd)e))
+    abc de  ((a(bc))(de)) (((ab)c)(de))
+    abcd e  ((a(b(cd)))e) ((a((bc)d))e) (((ab)(cd))e) (((a(bc))d)e) ((((ab)c)d)e)
+    
+    rstu: (r(s(tu))) (r((st)u)) ((rs)(tu)) ((r(st))u) (((rs)t)u)
+    r stu (r(s(tu)))  (r((st)u))
+    rs tu ((rs)(tu))
+    rst u ((r(st))u)  (((rs)t)u)
+    
+    xyz: (x(yz)) ((xy)z)
+    x yz (x(yz))
+    xy z ((xy)z)
+    
+    mn: (mn)
+    m n: (mn)    
