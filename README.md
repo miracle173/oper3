@@ -30,6 +30,10 @@ Properties
     a oF b = c oF d = False
     a oIl b = a oIl c = a
     a oIr b = a oIr c = b
-    a oNl b = a oNl c = complement(a) 
-    a oNr b = a oNr c = complement(b)
+    a oNl b = a oNl c = C(a) 
+    a oNr b = a oNr c = C(b)
+    
+    a o a in {T,F,a, C(a)}
+    (a o a) o b = a o b
+    (a o b) o a = a o b 
     
