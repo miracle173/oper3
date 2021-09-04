@@ -13,9 +13,9 @@ Properties
     ( a o a ) o b = a o b
     
 0-ary- and 1-ary operators expressed as binary operators:
-    False (oF), True (oT), 
-    left Projection/Identity (oIl), right Projection/Identity (oIr), 
-    left Negation (oNl), right Negation (oNr)
+    False (`oF`), True (`oT`), 
+    left Projection/Identity (`oIl`), right Projection/Identity (`oIr`), 
+    left Negation (`oNl`), right Negation (`oNr`)
 
       oF     oT     oIl    oIr    oNl    oNr
     a b r  a b r  a b r  a b r  a b r  a b r
@@ -39,6 +39,7 @@ Properties
     
 
 different paranthese settings
+
     abcde:
     a bcde  (a(b(c(de)))) (a(b((cd)e))) (a((bc)(de))) (a((b(cd))e)) (a(((bc)d)e))
     ab cde  ((ab)(c(de))) ((ab)((cd)e))
