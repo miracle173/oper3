@@ -57,3 +57,49 @@ different paranthese settings
     yz: (yz)
     y z: (yz)    
  
+ 
+ reducing the cases
+ 
+ three variables
+ 
+    (x(yz))
+    if |{w,x,y,z}|<3 then (x(yz)) = (uv), where {uv}={w,x,y,z}|, which is already processed
+    (a(bc)) -> new
+    ((xy)z)=(z(xy))~(x(yz))
+  so the only case is (a(bc))
+ 
+ four variables
+ 
+    (w(x(yz))) 
+    if |{w,x,y,z}|<3 then (w(x(yz))) = (uv), where {uv}={w,x,y,z}|, which is already processed
+    so |{w,x,y,z}|=3
+    (a(a(...)))=(a(...)) shorter
+    (a(b(ac)) -> new 
+    (a(b(bz))=(a(bz)),  shorter
+    (a(b(cz)))=)(a(b(zc)), for z in {a,b}, already processed
+    (a(b(cc)))=(a(bc)), shorter
+    (a,c,...)~(a,b,...)) relabeling
+    (w,...)~(a,...), w in {b,c},relabelling
+
+
+
+    (w((xy)z))
+    (w((xy)z))=(w(z(xy))~(w(y(yz)), already processed
+
+    ((wx)(yz))
+    if |{w,x,y,z}|<3 then ((wx)(yz)) = (uv), where {uv}={w,x,y,z}|, which is already processed
+    so |{w,x,y,z}|=3
+    ((aa)...)=(a...), shorter
+    ((ab)(ac)) -> new
+    ((ab)(bc)~((ba)(ac))=((ab)(ac), already processed
+    ((ac)...)~((ab)...), relabeling
+    ((b....)~((a....),relabeling
+    ((c....)~((a....),relabeling
+
+    ((w(xy))z)=(z(w(xy)))~(w(x(yz))), already processed 
+    (((wx)y)z)=(z(y(wx)))~(w(x(yz))), already processed 
+
+so the only cases are
+
+    (a(b(ac))) 
+    ((ab)(ac))
