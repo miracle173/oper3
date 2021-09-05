@@ -104,6 +104,8 @@ so the only cases are
     (a(b(ac))) 
     ((ab)(ac))
     
+    xy
+    (xy)
     
     
     xyz
@@ -128,6 +130,38 @@ so the only cases are
     ((u(vw))(x(yz)))
 
 
+
+    yz::
+    (yz):
+    (ab)
+    
+    xyz::
+    (x(yz)):
+    (a(bc))
+    
+    wxyz::
+    (w(x(yz))):
+    (a(b(ac)))
+    
+    ((wx)(yz)):
+    ((ab)(ac))
+    ((ab)(bc))
+    
+    vwxyz::
+    (v(w(x(yz)))):
+    (a(b(a(bc))))
+    (a(b(c(ab))))
+    
+    (v((wx)(yz))):
+    (a((ab)(ac)))
+    (a((ab)(bc)))
+    
+    ((vw)(x(yz))):
+    ((ab)(a(bc)))
+    ((ab)(b(ac)))
+    ((ab)(c(ab)))
+    
+    uvwxyz::
     (u(v(w(x(yz))))):
     (a(b(a(b(ac)))))
     (a(b(a(c(ab)))))
