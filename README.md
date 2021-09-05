@@ -103,3 +103,59 @@ so the only cases are
 
     (a(b(ac))) 
     ((ab)(ac))
+    
+    
+    
+    xyz
+    (x(yz))
+
+    wxyz
+    (w(x(yz)))
+    ((wx)(yz))
+
+    vwxyz
+
+    (v(w(x(yz))))
+    (v((wx)(yz)))
+    ((vw)(x(yz)))
+
+    uvwxyz
+    (u(v(w(x(yz)))))
+    (u(v((wx)(yz))))
+    (u((vw)(x(yz))))
+    ((uv)(w(x(yz))))
+    ((uv)((wx)(yz)))
+    ((u(vw))(x(yz)))
+
+
+    (u(v(w(x(yz))))):
+    (a(b(a(b(ac)))))
+    (a(b(a(c(ab)))))
+    (a(b(c(a(bc)))))
+    (a(b(c(b(ac)))))
+
+    (u(v((wx)(yz)))):
+    (a(b((ab)(ac))))
+    (a(b((ab)(bc))))
+
+    (u((vw)(x(yz)))):
+    (a((ab)(a(bc))))
+    (a((ab)(b(ac))))
+    (a(bc)(b(ac)))))
+    (a(bc)(c(ab)))))
+
+    ((uv)(w(x(yz)))):
+    ((ab)(a(b(ac))))
+    ((ab)(a(c(ab))))
+    ((ab)(b(a(bc))))
+    ((ab)(b(c(ab))))
+    ((ab)(c(a(bc))))
+    ((ab)(c(b(ac))))
+
+    ((uv)((wx)(yz))):
+    ((ab)((ac)(bc)))
+
+    ((u(vw))(x(yz))):
+    ((a(bc))(b(ac)))
+    ((a(bc))(c(ab)))
+    
