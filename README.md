@@ -1,7 +1,84 @@
 # oper3
+How many operators are necessary to emulate all 3-ary boolean operators. We do not need more than five , a the OP shows. The 3-ary boolean operator $\omega(a,b,c)$ can be emulated by 
+
+$$  ( a\land (b \circ_1 c )) \lor (\lnot a \land ( b \circ_2 c))$$
+
+where $b \circ_1 c :=\omega(1,b,c)$ and $b \circ_2 c := \omega(0,b,c)$.
+
+Actually we have 5 binary operators here and the unary operator $\lnot$, but $\lnot$ can be eliminated by using an apropriate binary operator instead of $\land$
+
+Let us define the operator $\circ_{02}$ as
+
+    n a b *
+    1 0 0 0
+    2 0 1 1
+    3 1 0 0
+    4 1 1 0
+    
+and so $\omega$ can be expressed as
+    
+$$  ( a\land (b \circ_1 c )) \lor (\lnot a \circ_{02} ( b \circ_2 c)) $$
+
+
+At the moment I have only a partial solution. I count the $\lnot$ as a binary operator and also the constants (0-ary operators) $T$ and $F$. I did some calculations with python and if I did not made an error it is not possible to express all possible ternary operators by three binary operators. My program was only able to find such representations of three binary operators for only 232 of the 256 ternary operators. One of the ternary operator that I could not express by three binary operators was
+
+     n a b c *
+     1 0 0 0 0
+     2 0 0 1 0
+     3 0 1 0 0
+     4 0 1 1 1
+     5 1 0 0 0
+     6 1 0 1 1
+     7 1 1 0 1
+     8 1 1 1 0
+
+Her n is the row number of the table, a,b,c are the variables and * is the value of the operator with arguments a,b,c.
+Bu I am not sure that my program is working correctly. But what I can show here is that ternary operator cannot be expressed by two binary operations.
+
+Proof:
+
+Assume that * can be expressed by (a op1 b) op2 c. Then from line 1 and 7 follows
+
+    (0 op1 0) o2 0 = 0
+    (1 op1 1) o2 0 = 1
+
+Form this follows that 
+
+    (0 op1 0) != (1 o1 1)   (1)
+
+From line 2 and 4 follows
+    
+    (0 o1 0) != (0 o1 1)    (2)
+
+and from 4 and 8
+
+    ( 0 o1 1) != (1 op1 1)    (3) 
+
+From the last two inequalities follows 
+
+    (0 op1 0) = (1 op1 1)     (4)
+
+But (4) contradicts (1). so we cannot find two binary operators such that 
+
+$$( a\ \text{op}_1\ b)\ \text{op}_2\ c = *(a,b,c)$$
+
+One also has to check if 
+
+$$ a\ \text{op}_1\ (b\ \text{op}_2\ c) = *(a,b,c)$$
+
+but we will get a similar contradiction.
+
+
+
+
+0-expr:
+
+expr:=(expr_1 o expr_2)
+    expr((a1,...,an),k)=expr((a1,...,an),k-1)=
+
 Definiton of the symbol `o`
 
-    a o b = c o d
+    a o b ~ c o d
     
 means that there are binary boolean operation `o1` and `o2` such that. Every single instance of a `o` in an expression is meaning a different operator
 
@@ -172,12 +249,18 @@ so the only cases are
     (u(v((wx)(yz)))):
     (a(b((ab)(ac))))
     (a(b((ab)(bc))))
+    (a(b((ac)(bc))))
 
     (u((vw)(x(yz)))):
     (a((ab)(a(bc))))
     (a((ab)(b(ac))))
-    (a(bc)(b(ac)))))
-    (a(bc)(c(ab)))))
+    (a((ab)(c(ab))))
+    (a((ac))(a(bc)))
+    (a((ac))(b(ac)))
+    (a((ac))(c(ab)))
+    (a((bc))(a(bc)))
+    (a((bc))(b(ac)))
+    (a((bc))(c(ab)))
 
     ((uv)(w(x(yz)))):
     ((ab)(a(b(ac))))
@@ -188,11 +271,27 @@ so the only cases are
     ((ab)(c(b(ac))))
 
     ((uv)((wx)(yz))):
-    ((ab)((ac)(bc)))
-
+    ((ab)((ab)(ac)))
+    ((ab)((ac)(bc))) 
+    
     ((u(vw))(x(yz))):
+    ((a(bc))(a(bc)))
     ((a(bc))(b(ac)))
     ((a(bc))(c(ab)))
+    
+    Example proofs for     (u(v(w(x(yz)))))
+    (a(a(...)))~(a(...)) <
+    (a(b(a(a(...)))))~(a(b(a(...)))) <
+    (a(b(a(b(aa)))))~(a(b(a(ba)))) <
+    (a(b(a(b(ab)))))~(a(b(a(ba)))) <
+    (a(b(a(b(ac))))) !
+    (a(b(a(b(b...)))))~(a(b(a(b...))))<
+    (a(b(a(b(ca)))))~ (a(b(a(b(ac))))) ^
+    (a(b(a(b(cb)))))~(a(b(a(bc)))) <
+    (a(b(a(b(cc)))))~(a(b(a(bc)))) <
+    (a(b(a(c(aa)))))~(a(b(a(ca))))<
+    (a(b(a(c(ab))))) !
+
     
 the six relabeling permutations
 
