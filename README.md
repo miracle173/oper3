@@ -12,6 +12,7 @@ Properties
     a o b = b o a
     ( a o a ) o b = a o b
     
+      
 0-ary- and 1-ary operators expressed as binary operators:
     False (`oF`), True (`oT`), 
     left Projection/Identity (`oIl`), right Projection/Identity (`oIr`), 
@@ -222,3 +223,15 @@ the six relabeling permutations
     ((((((2*v[7]+v[3])*2+v[6])*2+v[2])*2+v[5])*2+v[1])*2+v[4])*2+v[0]
     ((((((2*v[7]+v[5])*2+v[3])*2+v[1])*2+v[6])*2+v[4])*2+v[2])*2+v[0]
     ((((((2*v[7]+v[3])*2+v[5])*2+v[1])*2+v[6])*2+v[2])*2+v[4])*2+v[0]    
+    
+Example for Latex formulas    
+![
+\begin{eqnarray}  a \circ  b &=& b \circ a \\
+( a \circ  a ) \circ b &=& a \circ b
+\end{eqnarray}
+](https://i.stack.imgur.com/i7G2A.png)
+
+http://latex.codecogs.com/
+
+https://math.meta.stackexchange.com/
+
